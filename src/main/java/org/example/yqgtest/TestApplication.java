@@ -1,4 +1,4 @@
-package com.test;
+package org.example.yqgtest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
