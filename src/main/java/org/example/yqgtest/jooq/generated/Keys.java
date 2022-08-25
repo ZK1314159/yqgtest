@@ -4,12 +4,13 @@
 package org.example.yqgtest.jooq.generated;
 
 
-import javax.annotation.Generated;
-
 import org.example.yqgtest.jooq.generated.tables.Author;
 import org.example.yqgtest.jooq.generated.tables.records.AuthorRecord;
+import org.jooq.Identity;
 import org.jooq.UniqueKey;
 import org.jooq.impl.AbstractKeys;
+
+import javax.annotation.Generated;
 
 
 /**
@@ -30,6 +31,7 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
+    public static final Identity<AuthorRecord, Integer> IDENTITY_AUTHOR = Identities0.IDENTITY_AUTHOR;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
@@ -45,6 +47,10 @@ public class Keys {
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
     // -------------------------------------------------------------------------
+
+    private static class Identities0 extends AbstractKeys {
+        public static Identity<AuthorRecord, Integer> IDENTITY_AUTHOR = createIdentity(Author.AUTHOR, Author.AUTHOR.ID);
+    }
 
     private static class UniqueKeys0 extends AbstractKeys {
         public static final UniqueKey<AuthorRecord> KEY_AUTHOR_PRIMARY = createUniqueKey(Author.AUTHOR, "KEY_author_PRIMARY", Author.AUTHOR.ID);

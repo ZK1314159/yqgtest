@@ -4,20 +4,15 @@
 package org.example.yqgtest.jooq.generated.tables;
 
 
-import java.util.Arrays;
-import java.util.List;
-
-import javax.annotation.Generated;
-
 import org.example.yqgtest.jooq.generated.Keys;
 import org.example.yqgtest.jooq.generated.Library;
 import org.example.yqgtest.jooq.generated.tables.records.AuthorRecord;
-import org.jooq.Field;
-import org.jooq.Schema;
-import org.jooq.Table;
-import org.jooq.TableField;
-import org.jooq.UniqueKey;
+import org.jooq.*;
 import org.jooq.impl.TableImpl;
+
+import javax.annotation.Generated;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -33,7 +28,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Author extends TableImpl<AuthorRecord> {
 
-    private static final long serialVersionUID = 150947387;
+    private static final long serialVersionUID = 185936648;
 
     /**
      * The reference instance of <code>library.author</code>
@@ -56,12 +51,12 @@ public class Author extends TableImpl<AuthorRecord> {
     /**
      * The column <code>library.author.first_name</code>.
      */
-    public final TableField<AuthorRecord, String> FIRST_NAME = createField("first_name", org.jooq.impl.SQLDataType.VARCHAR.length(255), this, "");
+    public final TableField<AuthorRecord, String> FIRST_NAME = createField("first_name", org.jooq.impl.SQLDataType.VARCHAR.length(255).nullable(false), this, "");
 
     /**
      * The column <code>library.author.last_name</code>.
      */
-    public final TableField<AuthorRecord, String> LAST_NAME = createField("last_name", org.jooq.impl.SQLDataType.VARCHAR.length(255), this, "");
+    public final TableField<AuthorRecord, String> LAST_NAME = createField("last_name", org.jooq.impl.SQLDataType.VARCHAR.length(255).nullable(false), this, "");
 
     /**
      * Create a <code>library.author</code> table reference
@@ -91,6 +86,14 @@ public class Author extends TableImpl<AuthorRecord> {
     @Override
     public Schema getSchema() {
         return Library.LIBRARY;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Identity<AuthorRecord, Integer> getIdentity() {
+        return Keys.IDENTITY_AUTHOR;
     }
 
     /**
