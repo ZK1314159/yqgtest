@@ -83,7 +83,39 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.28</version>
         </dependency>
-
     </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.googlecode.flyway</groupId>
+                    <artifactId>flyway-maven-plugin</artifactId>
+                    <version>1.7</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>mysql</groupId>
+                            <artifactId>mysql-connector-java</artifactId>
+                            <version>5.1.43</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <driver>com.mysql.jdbc.Driver</driver>
+                        <url>jdbc:mysql://localhost:3306/flyway?useUnicode=true&amp;characterEncoding=UTF-8</url>
+                        <user>root</user>
+                        <password></password>
+                        <schemas>flyway</schemas>
+                        <table>schema_version</table>
+                        <locations>
+                            <location>migration</location>
+                        </locations>
+                        <encoding>UTF-8</encoding>
+                        <validationMode>ALL</validationMode>
+                        <validationErrorMode>FAIL</validationErrorMode>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
