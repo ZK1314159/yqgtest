@@ -1,0 +1,7 @@
+influxdb:
+  url: http://localhost:8086
+  user: zengkai
+  password: 12345678
+  bucket: test
+  org: yqg
+  token: zIH04qA5DZASjmIZVGZbJ2sOXUl5xTvOBjkkTwps3HrB132WJrcIagkey7gN39GPH-Fr7pWQtyGYVgtrSUJidQ==
