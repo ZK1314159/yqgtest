@@ -4,18 +4,17 @@ import com.influxdb.client.InfluxDBClient;
 import com.influxdb.client.InfluxDBClientFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
-public class InfluxdbConfigurationNew {
+//@Configuration
+public class InfluxdbConfigurationV2 {
 
   @Autowired
-  private InfluxdbConfigurationDto influxdbConfigurationDto;
+  private InfluxdbConfigurationDtoV2 influxdbConfigurationDtoV2;
 
   @Bean
   public InfluxDBClient influxDBClient() {
-    String url = influxdbConfigurationDto.getUrl();
-    String token = influxdbConfigurationDto.getToken();
+    String url = influxdbConfigurationDtoV2.getUrl();
+    String token = influxdbConfigurationDtoV2.getToken();
     return InfluxDBClientFactory.create(url, token.toCharArray());
   }
 

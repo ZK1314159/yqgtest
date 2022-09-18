@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @Slf4j
-public class InfluxdbConfiguration {
+public class InfluxdbConfigurationV1 {
 
   @Autowired
-  private InfluxdbConfigurationDto configDto;
+  private InfluxdbConfigurationDtoV1 configDto;
 
   @Bean
   public InfluxDB influxDB() {

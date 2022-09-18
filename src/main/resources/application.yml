@@ -1,4 +1,10 @@
-influxdb:
+influxdb@1:
+  url: http://localhost:8086
+  user: admin
+  password: 123456
+  dbname: test
+  retentionPolicy: autogen
+influxdb@2:
   url: http://localhost:8086
   user: zengkai
   password: 12345678

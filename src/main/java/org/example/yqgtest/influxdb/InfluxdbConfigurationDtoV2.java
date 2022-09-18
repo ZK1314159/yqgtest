@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-@ConfigurationProperties(prefix = "influxdb")
-public class InfluxdbConfigurationDto {
+@ConfigurationProperties(prefix = "influxdb@2")
+public class InfluxdbConfigurationDtoV2 {
 
   private String url;
 
