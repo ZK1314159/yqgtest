@@ -102,6 +102,12 @@
             <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>com.yqg.common</groupId>
+            <artifactId>common-util</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+
     </dependencies>
 
     <build>
