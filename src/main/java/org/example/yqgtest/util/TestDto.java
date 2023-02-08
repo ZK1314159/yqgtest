@@ -7,6 +7,8 @@ public class TestDto {
 
   private String name;
 
+  private String gender;
+
   public String getCode() {
     return "test";
   }
