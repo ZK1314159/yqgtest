@@ -9,6 +9,8 @@ public class TestDto {
 
   private String gender;
 
+  private Integer age;
+
   public String getCode() {
     return "test";
   }
