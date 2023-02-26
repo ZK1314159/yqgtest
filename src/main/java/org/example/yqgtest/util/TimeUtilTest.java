@@ -10,6 +10,8 @@ public class TimeUtilTest {
     long start = YqgClock.now();
     long end = YqgClock.getMaxMillisOfDay(start);
     int days = YqgClock.getCalenderDaysBetween(start, end);
+    String timeString = YqgClock.dateString(YqgClock.now(), "HH:mm:ss");
+    long date = YqgClock.dateStringToLong("2023-08-27", "yyyy-MM-dd");
   }
 
 }
