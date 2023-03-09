@@ -1,16 +1,20 @@
 package org.example.yqgtest.unittest;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@AllArgsConstructor
+//@NoArgsConstructor
 public class SimpleService {
 
-  @Autowired
   private MockService mockService;
+//  public SimpleService(MockService mockService) {
+//    this.mockService = mockService;
+//  }
 
   public Integer unitTest() {
-    return 1;
+    return mockService.test();
   }
 
 }
