@@ -1,7 +1,6 @@
 package org.example.yqgtest.util;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yqg.common.util.serialization.JsonUtils;
 import lombok.AllArgsConstructor;
@@ -32,7 +31,10 @@ public class JsonTest {
     String code = "\"" + "SUMMER" + "\"";
     Season season = JsonUtils.from(code, Season.class);
 
-
+    test.setEnumTest(EnumTest.SUMMER);
+    String jsonString = JsonUtils.toString(test);
+    jsonString = jsonString.replaceAll("SUMMER", "s99s1");
+    TestDto reverseDto = JsonUtils.fromOrException(jsonString, TestDto.class);
   }
 
   @Getter
@@ -43,5 +45,8 @@ public class JsonTest {
     private String code;
     private String desc;
   }
+
+
+
 
 }

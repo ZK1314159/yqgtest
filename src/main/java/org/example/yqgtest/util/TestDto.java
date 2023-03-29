@@ -11,6 +11,8 @@ public class TestDto {
 
   private Integer age;
 
+  private EnumTest enumTest;
+
   public String getCode() {
     return "test";
   }
