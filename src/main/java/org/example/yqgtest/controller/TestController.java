@@ -2,6 +2,7 @@ package org.example.yqgtest.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.yqgtest.unittest.SimpleService;
+import org.example.yqgtest.util.ParamCheckUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,9 @@ public class TestController {
   private SimpleService simpleService;
 //  private final String string = "test";
 
+  @Autowired
+  private ParamCheckUtil paramCheckUtil;
+
   @GetMapping("/test")
   public Integer test() {
 //    log.info(string);
@@ -26,6 +30,14 @@ public class TestController {
 
   @GetMapping("/curl")
   public String curl() {
+    return "success";
+  }
+
+  @GetMapping("/curl2")
+  public String paramCheck() {
+//    ParamCheckUtil.Param param = ParamCheckUtil.Param.builder().id(1).name("hhaj").values(Lists.newArrayList(1)).build();
+    ParamCheckUtil.Param param = ParamCheckUtil.Param.builder().build();
+    ParamCheckUtil.Result result = paramCheckUtil.validate(param);
     return "success";
   }
 

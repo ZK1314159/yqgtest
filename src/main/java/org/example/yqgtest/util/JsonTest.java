@@ -2,15 +2,20 @@ package org.example.yqgtest.util;
 
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.yqg.common.util.clock.YqgClock;
 import com.yqg.common.util.serialization.JsonUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class JsonTest {
 
+  @SuppressWarnings("unchecked")
   public static void main(String[] args) throws Exception {
     ObjectMapper mapper = new ObjectMapper();
     TestDto test = new TestDto();
@@ -34,7 +39,11 @@ public class JsonTest {
     test.setEnumTest(EnumTest.SUMMER);
     String jsonString = JsonUtils.toString(test);
     jsonString = jsonString.replaceAll("SUMMER", "s99s1");
-    TestDto reverseDto = JsonUtils.fromOrException(jsonString, TestDto.class);
+//    TestDto reverseDto = JsonUtils.fromOrException(jsonString, TestDto.class);
+    Map<String, String> map1 = JsonUtils.from(jsonString, HashMap.class);
+    List<?> list = new ArrayList<>(map1.values());
+    String s2 = DateTimeFormatter.ISO_LOCAL_DATE.toString();
+    Long date = YqgClock.dateStringToLong("2019-01-01", DateTimeFormatter.ISO_LOCAL_DATE.toString());
   }
 
   @Getter

@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class TestDto {
 
-  private String name;
+  public String name;
 
   private String gender;
 
@@ -13,6 +13,11 @@ public class TestDto {
 
   private EnumTest enumTest;
 
+//  public void setName(String name) {
+//    this.name = "jdhfdj";
+//  }
+
+//  @JsonIgnore
   public String getCode() {
     return "test";
   }
