@@ -17,12 +17,16 @@ public class JsonTest {
 
   @SuppressWarnings("unchecked")
   public static void main(String[] args) throws Exception {
+    TestDto test = TestDto.builder()
+      .name("name")
+      .success(true)
+      .crash(false)
+      .build();
+    String testString = JsonUtils.toString(test);
+    TestDto newTest = JsonUtils.from(testString, TestDto.class);
     ObjectMapper mapper = new ObjectMapper();
-    TestDto test = new TestDto();
-    test.setName("name");
     String string = mapper.writeValueAsString(test);
     TestDto newDto = mapper.readValue(string, TestDto.class);
-
     Map<String, String> map = JsonUtils.fromOrException(string, HashMap.class);
     map.put("gender", "man");
     map.put("age", null);
@@ -54,8 +58,5 @@ public class JsonTest {
     private String code;
     private String desc;
   }
-
-
-
 
 }

@@ -4,7 +4,7 @@ import com.yqg.common.util.serialization.JsonUtils;
 
 public class JasksonTest {
   public static void main(String[] args) {
-    TestDto test = new TestDto();
+    TestDto test = TestDto.builder().build();
     test.name = "test";
     test.setAge(3);
     test.setGender("man");
