@@ -1,12 +1,11 @@
 package org.example.yqgtest.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.yqgtest.controller.vo.ValidTestVo;
 import org.example.yqgtest.unittest.SimpleService;
 import org.example.yqgtest.util.ParamCheckUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/test")
@@ -38,6 +37,11 @@ public class TestController {
 //    ParamCheckUtil.Param param = ParamCheckUtil.Param.builder().id(1).name("hhaj").values(Lists.newArrayList(1)).build();
     ParamCheckUtil.Param param = ParamCheckUtil.Param.builder().build();
     ParamCheckUtil.Result result = paramCheckUtil.validate(param);
+    return "success";
+  }
+
+  @PostMapping("/valideTest")
+  public String yqgValidTest(@RequestBody ValidTestVo validTestVo) {
     return "success";
   }
 
