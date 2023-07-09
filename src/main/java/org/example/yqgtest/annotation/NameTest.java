@@ -2,12 +2,10 @@ package org.example.yqgtest.annotation;
 
 import com.yqg.core.util.exception.YqgException;
 import com.yqg.core.util.exception.YqgExceptionType;
-import org.apache.commons.compress.utils.Lists;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -17,7 +15,6 @@ public class NameTest {
   public static void main(String[] args) {
     Class<NameDto> nameDtoClass = NameDto.class;
     String name = getName(nameDtoClass, "姓名");
-    Comparator.comparing()
   }
 
   private static String getName(Class<?> clazz, String name) {
