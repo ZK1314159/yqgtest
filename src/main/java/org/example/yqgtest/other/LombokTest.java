@@ -12,11 +12,12 @@ public class LombokTest {
   @Data
   public static class SampleDto {
     private int id;
-    private String name;
+    @Builder.Default
+    private String name = "default";
     private int age;
   }
 
-  public static class PlianDto {
+  public static class PlainDto {
     private int id;
     private String name;
     private int age;
@@ -24,9 +25,9 @@ public class LombokTest {
 
 
   public static void main(String[] args) {
-    SampleDto test = SampleDto.builder().id(1).name("name").age(12).build();
+    SampleDto test = SampleDto.builder().id(1).age(12).build();
     String string = test.toString();
-    PlianDto plianDto = new PlianDto();
+    PlainDto plianDto = new PlainDto();
     plianDto.id = 2;
     plianDto.age = 20;
     String string2 = plianDto.toString();
