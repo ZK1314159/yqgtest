@@ -1,11 +1,11 @@
-package org.example.yqgtest.util;
+package org.example.yqgtest.util.json;
 
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yqg.common.util.clock.YqgClock;
 import com.yqg.common.util.serialization.JsonUtils;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import org.example.yqgtest.util.EnumTest;
+import org.example.yqgtest.util.TestDto;
 
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -48,15 +48,6 @@ public class JsonTest {
     List<?> list = new ArrayList<>(map1.values());
     String s2 = DateTimeFormatter.ISO_LOCAL_DATE.toString();
     Long date = YqgClock.dateStringToLong("2019-01-01", DateTimeFormatter.ISO_LOCAL_DATE.toString());
-  }
-
-  @Getter
-  @AllArgsConstructor
-  public static enum Season {
-    SUMMER("S", "summer"),
-    WINTER("W", "winter");
-    private String code;
-    private String desc;
   }
 
 }
