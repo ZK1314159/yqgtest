@@ -43,9 +43,6 @@ public class Test {
          */
         System.out.println("ID: " + id + " first name: " + firstName + " last name: " + lastName);
       }
-
-      // 关闭连接对象
-      conn.close();
     }
     // For the sake of this tutorial, let's keep exception handling simple
     catch (Exception e) {
